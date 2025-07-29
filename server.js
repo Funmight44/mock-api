@@ -5,7 +5,7 @@ const server = jsonServer.create();
 const router = jsonServer.router("data/db.json");
 const middlewares = jsonServer.defaults();
 
-server.use(cors()); // ✅ MUST be first
+server.use(cors({ origin: "*" })); // ✅ MUST be first
 server.use(middlewares);
 server.use(router);
 
